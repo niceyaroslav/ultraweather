@@ -1,6 +1,7 @@
 import requests
 import json
 from datetime import datetime
+import pytz
 
 
 class WeatherService:
@@ -8,12 +9,12 @@ class WeatherService:
     key = 'c47c0aa3ca0e3de709cc921a6f485819'
 
     def __init__(self):
-        self.local_data = self.get_data_by_city('Tallinn')
-        self.time_utc = self.local_data.get('dt') - self.local_data.get('timezone')
+        self.timezone = pytz.timezone('UTC')
 
     @staticmethod
     def kelvin_to_c(temp):
         return temp - 273
+
 
     @staticmethod
     def get_str_from_timestamp(ts):
@@ -25,8 +26,9 @@ class WeatherService:
         elif 11 < dt.hour < 17:
             return 'day'
 
-    def get_time_at_destination(self, timezone):
-        tt = self.time_utc + timezone
+    @staticmethod
+    def get_time_at_destination(timezone):
+        tt = datetime.timestamp(datetime.utcnow()) + timezone
         return tt
 
     @staticmethod
@@ -63,9 +65,9 @@ class WeatherService:
             return {'city': city, 'state': state, 'degrees': degrees, 'time': time, 'th': th}
 
 
-# lel = WeatherService()
-# kek = lel.get_data_by_city('Talllinn')
-# ff = lel.get_gata_dict('Tallinn')
-# pek = lel.get_data_by_city('Tokyo')
-# pf = lel.get_gata_dict('Tokyo')
+lel = WeatherService()
+kek = lel.get_data_by_city('Tallinn')
+ff = lel.get_gata_dict('Tallinn')
+pek = lel.get_data_by_city('Tokyo')
+pf = lel.get_gata_dict('Tokyo')
 
