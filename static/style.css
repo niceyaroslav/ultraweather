@@ -35,21 +35,21 @@
   	font-size: 40px;
   	text-align: center;
   	color: #fff;
-  	animation: glow 1s ease-in-out infinite alternate;
+  	/*animation: glow 1s ease-in-out infinite alternate;*/
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #cc33ff, 0 0 20px #cc33ff, 0 0 25px #cc33ff, 0 0 30px #cc33ff, 0 0 35px #cc33ff;
-  }
-  to {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #cc33ff, 0 0 40px #cc33ff, 0 0 50px #cc33ff, 0 0 60px #cc33ff, 0 0 70px #cc33ff;
-  }
-}
+/*@keyframes glow {*/
+/*  from {*/
+/*    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #cc33ff, 0 0 20px #cc33ff, 0 0 25px #cc33ff, 0 0 30px #cc33ff, 0 0 35px #cc33ff;*/
+/*  }*/
+/*  to {*/
+/*    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #cc33ff, 0 0 40px #cc33ff, 0 0 50px #cc33ff, 0 0 60px #cc33ff, 0 0 70px #cc33ff;*/
+/*  }*/
+/*}*/
 
 html, body {
 	min-height: 100vh;
-	background: linear-gradient(yellow, purple);
+	background: linear-gradient(#2193b0 , #6dd5ed);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	padding: 0;
@@ -83,13 +83,13 @@ input {
 	border: none;
 	border-radius: 25px;
 	outline: none !important;
-	background-color: purple;
+	background-color: darkslateblue;
 	color: white;
 	box-shadow: 0 0 1vw rgba(0,0,0,0.5);
 }
 
 .submit-button:hover {
-	background-color: #e600e6;
+	background-color: #457eff;
 	cursor: pointer;
 }
 
